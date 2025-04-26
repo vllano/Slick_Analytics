@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie Order Application</title>
+        <script type="text/javascript">
+           "use strict";//Victor Llano Marotta
+           
+           var $ = function(id) {
+               return document.getElementById(id);
+           }
+           //create the parameters for function
+           function movieOrder(movie, movieType, ticketNumber) {
+               this.movie = movie;
+               this.movieType = movieType;
+               this.ticketNumber = ticketNumber;
+        
+               this.checkPrice = function() {
+                   var price = 0; 
+                   //determine price based on type
+                   if(this.movieType == "3D")
+                   {
+                       price = 21.99 + 1.99;
+                   }
+                   else if(this.movieType == "Dolby")
+                   {
+                       price = 14.49 + 1.99;
+                   }
+                   else if(this.movieType == "Standard")
+                   {
+                       price = 10.99 + 1.99;
+                   }
+                   else
+                   {
+                       console.log("error");//error message
+                   }
+                   
+                   //determine price based on number of tickets
+                   if(this.ticketNumber == "1")
+                   {
+                       price = price;
+                   }
+                   else if(this.ticketNumber == "2")
+                   {
+                       price = price * 2;
+                   }
+                   else if(this.ticketNumber == "3")
+                   {
+                       price = price * 3;
+                   }
+                   else if(this.ticketNumber == "4")
+                   {
+                       price = price * 4;
+                   }
+                   else if(this.ticketNumber == "5")
+                   {
+                       price = price * 5;
+                   }
+                   else if(this.ticketNumber == "6")
+                   {
+                       price = price * 6;
+                   }
+                   else if(this.ticketNumber == "7")
+                   {
+                       price = price * 7;
+                   }
+                   else if(this.ticketNumber == "8")
+                   {
+                       price = price * 8;
+                   }
+                   else
+                   {
+                       console.log("Max is 8 tickets per person");//error message
+                   }
+                   
+                   return price;
+               }//end of checkPrice
+           }// end of your movieOrder 
+           
+           var getMyTicket = function() {
+               
+               var myTicket = new movieOrder($("movie").value, $("movieType").value, $("ticketNumber").value);
+               $("moviePrice").textContent = ("●  Movie Name: " + movie.value + " ●  Movie Type: " + movieType.value + " ●  Number of Tickets: " + ticketNumber.value + " ●  Price: $" + myTicket.checkPrice().toFixed(2));
+               
+           }
+           
+           window.onload = function() {
+               $("order").onclick = getMyTicket;
+               $("movieType").focus();
+           }//Victor Llano Marotta
+           //create display
+        </script>
+
+        <style>
+          .myButton {
+            background-color: #e7e5cb;
+            border: 2px solid #000000;
+            cursor: pointer;
+            padding: 4px 6px;
+            transition: 0.3s;
+            font-size: 14px;
+          }
+          .dropdown {
+            background-color: #e7e5cb;
+            border: 2px solid #000000;
+            cursor: pointer;
+            padding: 4px 6px;
+            transition: 0.3s;
+            font-size: 14px;
+          }
+          .classA {
+            font-size: 20px;
+            color: #000000;
+            display: block;
+          }
+        </style>
+
+
+    </head>
+    <body style="background-color:#7a7538;"> 
+        <h2><u>Order Your Tickets Here</u>:</h2>
+        
+        <label class="classA" for="movie">Choose Movie: </label>
+		    <select class="dropdown" id="movie">
+		    <option value="Sicario: Day of the Soldado">Sicario: Day of the Soldado</option>
+		    <option value="Avengers: Infinity War">Avengers: Infinity War</option>
+		    <option value="Jurassic World: Fallen Kingdom">Jurassic World: Fallen Kingdom</option>
+        <option value="Incredibles 2">Incredibles 2</option>
+		    <option value="Tag">Tag</option>
+        <option value="Solo: A Star Wars Story">Solo: A Star Wars Story</option>
+		    <option value="Deadpool 2">Deadpool 2</option>
+		    </select><br><br>
+    	 <label class="classA" for="movieType">Choose Type: </label>
+		    <select class="dropdown" id="movieType">
+		    <option value="3D">3D</option>
+		    <option value="Dolby">Dolby</option>
+		    <option value="Standard">Standard</option>
+		    </select><br><br>
+    	 <label class="classA" for="ticketNumber">Choose Number of Tickets: </label>
+		    <select class="dropdown" id="ticketNumber">
+		    <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+		    </select><br><br>
+        
+        <label>&nbsp;</label>
+        <input class="myButton" type="button" id="order" value="Order Movie Tickets">
+        <div class="classA" id="movieOrder">
+            <p id="moviePrice"></p>
+        </div>
+    </body>
+</html>
