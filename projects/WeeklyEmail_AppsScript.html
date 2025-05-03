@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Apps Script Portfolio Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .highlight {
+            background-color: #f7df1e; /* Yellow */
+            color: #000;
+            padding: 0.2em;
+            border-radius: 3px;
+        }
+        .comment {
+            color: #6a737d; /* Gray */
+            font-style: italic;
+        }
+        .keyword {
+            color: #0077aa; /* Blue */
+            font-weight: bold;
+        }
+        .string {
+            color: #00aa00; /* Green */
+        }
+        .number {
+            color: #aa0d91; /* Purple */
+        }
+        .function {
+            color: #ff0066; /* Pink */
+        }
+        .object {
+          color: #d95f06; /* Orange */
+        }
+        .method {
+          color: #1b9e77; /* Teal */
+        }
+        /* Table styling (same as in the script) */
+        .preview-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 0.7em;
+        }
+        .preview-table th, .preview-table td {
+            border: 1px solid #ddd;
+            padding: 4px;
+            text-align: left;
+        }
+        .preview-table th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        .preview-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9; /* Light gray for even rows */
+        }
+        .preview-table tbody tr:hover {
+            background-color: #ffffff;
+        }
+        .preview-table td {
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 p-8">
+    <div class="container mx-auto p-8 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+        <h1 class="text-3xl font-semibold text-green-600 dark:text-green-400 mb-6">Automated Weekly Reporting with Google Apps Script</h1>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+          This project is a follow-up to the "Throughput Tracking and Target Analysis with SQL" project. The project involves developing a Google Apps Script to automate the generation and distribution of weekly reports. The script retrieves data from a Google Sheet (derived from the previous SQL analysis) , formats it into an HTML report, and sends the report via email on a scheduled basis (weekly). The goal is to eliminate manual report creation, improve efficiency, and provide stakeholders with regular, automated updates on survey progress and performance.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-green-600 dark:text-green-400 mt-6 mb-4">Project Overview</h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+            The core functionality of this project is encapsulated in two main functions:
+        </p>
+
+        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 mb-6">
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">scheduleFunction():</span> This function sets up a weekly trigger to run the <code class="highlight">weeklyReporting()</code> function.  It uses Google Apps Script's <code class="highlight">ScriptApp</code> service to create a time-based trigger.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">weeklyReporting():</span> This function performs the following actions:
+                <ul class="list-disc list-inside ml-5">
+                    <li>Retrieves data from a Google Sheet.</li>
+                    <li>Formats the data into an HTML table.</li>
+                    <li>Adds an introductory text to the report.</li>
+                    <li>Sends the formatted report as an email.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-green-600 dark:text-green-400 mt-6 mb-4">Apps Script Code</h2>
+        <div class="bg-gray-50 dark:bg-gray-950 rounded-md p-4 overflow-x-auto mb-6">
+            <pre class="text-sm text-gray-800 dark:text-gray-200"><code><span class="comment">// Function to schedule the weekly reporting trigger</span>
+<span class="keyword">function</span> <span class="function">scheduleFunction</span>() {
+  <span class="object">ScriptApp</span>.<span class="method">newTrigger</span>(<span class="string">'weeklyReporting'</span>)
+    .<span class="method">timeBased</span>()
+    .<span class="method">onWeekDay</span>(<span class="object">ScriptApp</span>.<span class="identifier">WeekDay</span>.<span class="identifier">MONDAY</span>) 
+    .<span class="method">atHour</span>(<span class="number">4</span>)
+    .<span class="method">nearMinute</span>(<span class="number">1</span>)
+    .<span class="method">create</span>();
+  <span class="object">Logger</span>.<span class="method">log</span>(<span class="string">"Trigger set to run weeklyReporting every Monday at 4 AM"</span>);
+}
+
+<span class="comment">// Function to generate and send the weekly report</span>
+<span class="keyword">function</span> <span class="function">weeklyReporting</span>() {
+  <span class="comment">// 1. Get the spreadsheet and sheet</span>
+  var <span class="identifier">ss</span> = <span class="object">SpreadsheetApp</span>.<span class="method">getActiveSpreadsheet</span>();
+  var <span class="identifier">sheet</span> = <span class="identifier">ss</span>.<span class="method">getSheetByName</span>(<span class="string">'targets_vs_actuals'</span>);
+
+  <span class="comment">// 2. Get the data range</span>
+  var <span class="identifier">dataRange</span> = <span class="identifier">sheet</span>.<span class="method">getDataRange</span>();
+  var <span class="identifier">values</span> = <span class="identifier">dataRange</span>.<span class="method">getValues</span>(); <span class="comment">// Get all data as a 2D array</span>
+
+  <span class="comment">// 3. Get Current date</span>
+  var <span class="identifier">now</span> = new <span class="object">Date</span>();
+  var <span class="identifier">reportDate</span> = <span class="object">Utilities</span>.<span class="method">formatDate</span>(new <span class="object">Date</span>(), <span class="object">Session</span>.<span class="method">getTimeZone</span>(), <span class="string">"EEE MMM ddYYYY"</span>);
+  var <span class="identifier">options</span> = { <span class="identifier">year</span>: <span class="string">'numeric'</span>, <span class="identifier">month</span>: <span class="string">'long'</span> };
+  var <span class="identifier">formattedDate</span> = <span class="identifier">now</span>.<span class="method">toLocaleDateString</span>(<span class="string">'en-US'</span>, <span class="identifier">options</span>);
+  <span class="object">Logger</span>.<span class="method">log</span>(<span class="identifier">formattedDate</span>)
+
+  <span class="comment">// 4.  Define the text to add above the table</span>
+  var <span class="identifier">introductoryText</span> = <span class="string">`&lt;p style='font-size: 1.1em; margin-bottom: 10px; color: #333;'&gt;
+  Hi all,&lt;br&gt;
+  &lt;br&gt;
+  Below is the monthly target trend.&lt;br&gt;
+  Report generated on ${reportDate}.&lt;br&gt;
+  &lt;/p&gt;`</span>;
+
+
+  <span class="comment">// 5. Generate the HTML table</span>
+  let <span class="identifier">htmlTable</span> = <span class="string">"&lt;table style='border-collapse: collapse; width: 100%; margin-top: 10px; font-size: 1em;'&gt;"</span>; 
+  <span class="identifier">htmlTable</span> += <span class="string">"&lt;thead style='background-color: #f0f0f0;'&gt;&lt;tr&gt;"</span>;
+  <span class="identifier">values</span>[<span class="number">0</span>].<span class="method">forEach</span>(<span class="identifier">header</span> => {
+    <span class="identifier">htmlTable</span> += <span class="string">`&lt;th style='border: 1px solid #ddd; padding: 6px; text-align: left; font-size: 1.0em; width: 50px;'&gt;${header}&lt;/th&gt;`</span>; 
+  });
+  <span class="identifier">htmlTable</span> += <span class="string">"&lt;/tr&gt;&lt;/thead&gt;"</span>;
+  <span class="identifier">htmlTable</span> += <span class="string">"&lt;tbody&gt;"</span>;
+  let <span class="identifier">lastValue</span> = null;
+  let <span class="identifier">rowColor</span> = <span class="string">'#ffffff'</span>;
+  for (let <span class="identifier">i</span> = 1; <span class="identifier">i</span> < <span class="identifier">values</span>.<span class="identifier">length</span>; <span class="identifier">i</span>++) {
+    const <span class="identifier">currentColorValue</span> = <span class="identifier">values</span>[<span class="identifier">i</span>][<span class="number">0</span>];
+
+    if (<span class="identifier">currentColorValue</span> !== <span class="identifier">lastValue</span>) { <span class="comment">// Set up alternating colored rows</span>
+      <span class="identifier">rowColor</span> = (<span class="identifier">rowColor</span> === <span class="string">'#ffffff'</span>) ? <span class="string">'#f9f9f9'</span> : <span class="string">'#ffffff'</span>;
+      <span class="identifier">lastValue</span> = <span class="identifier">currentColorValue</span>;
+    }
+
+    <span class="identifier">htmlTable</span> += <span class="string">`&lt;tr style='background-color: ${rowColor};'&gt;`</span>;
+    <span class="identifier">values</span>[<span class="identifier">i</span>].<span class="method">forEach</span>((<span class="identifier">cell</span>, <span class="identifier">cellIndex</span>) => {
+      let <span class="identifier">cellValue</span> = <span class="identifier">cell</span>;
+      let <span class="identifier">cellStyle</span> = <span class="string">'border: 1px solid #ddd; padding: 6px; text-align: left; font-size: 1.0em; width: 50px;'</span>; 
+
+      if (typeof <span class="identifier">cell</span> === <span class="string">'number'</span> && <span class="identifier">values</span>[<span class="number">0</span>][<span class="identifier">cellIndex</span>].<span class="method">toLowerCase</span>().<span class="method">includes</span>(<span class="string">'%'</span>)) {
+        <span class="identifier">cellValue</span> = (<span class="identifier">cell</span> * 100).<span class="method">toFixed</span>(<span class="number">2</span>) + <span class="string">"%"</span>;
+        if (<span class="identifier">cell</span> > 0.7) { <span class="comment">// Change background color of cells in "% met" column based on values</span>
+          <span class="identifier">cellStyle</span> += <span class="string">' background-color: #e0f7fa;'</span>;
+        } else if (<span class="identifier">cell</span> > 0.3) {
+          <span class="identifier">cellStyle</span> += <span class="string">' background-color: #fffde7;'</span>;
+        } else {
+          <span class="identifier">cellStyle</span> += <span class="string">' background-color: #ffebee;'</span>;
+        }
+      }
+      <span class="identifier">htmlTable</span> += <span class="string">`&lt;td style='${cellStyle}'&gt;${cellValue}&lt;/td&gt;`</span>;
+    });
+    <span class="identifier">htmlTable</span> += <span class="string">"&lt;/tr&gt;"</span>;
+  }
+  <span class="identifier">htmlTable</span> += <span class="string">"&lt;/tbody&gt;"</span>;
+  <span class="identifier">htmlTable</span> += <span class="string">"&lt;/table&gt;"</span>;
+
+  <span class="comment">// 6. Style the table (CSS in &lt;style&gt; tag)</span>
+  const <span class="identifier">styledHtmlTable</span> = <span class="string">`&lt;style&gt;
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 5px; /* Further reduced margin */
+      font-family: Arial, sans-serif;
+      font-size: 0.7em; /* Even smaller font size */
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 4px; /* Further reduced padding */
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+      font-weight: bold;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9; /* Light gray for even rows */
+    }
+    tbody tr:hover {
+      background-color: #ffffff; /* Removed hover effect */
+    }
+    td {
+      vertical-align: top;
+    }
+  &lt;/style&gt;${htmlTable}`</span>;
+
+  <span class="comment">// 7.  Combine the text and the table</span>
+  const <span class="identifier">fullHtmlBody</span> = <span class="identifier">introductoryText</span> + <span class="identifier">styledHtmlTable</span>;
+
+  <span class="comment">// 8. Define the email subject with the variable</span>
+  const <span class="identifier">emailSubject</span> = <span class="string">"Monthly Target Trend - "</span> + <span class="identifier">formattedDate</span>; 
+
+  <span class="comment">// 9. Create a variable for email recipient</span>
+  var <span class="identifier">allRecipients</span>  = [<span class="string">'stakeholder1@company.com'</span>, <span class="string">'stakeholder2@company.com'</span>, <span class="string">'stakeholder3@company.com'</span>];
+
+  <span class="comment">// 10. Extract the email address and send the email</span>
+  <span class="object">MailApp</span>.<span class="method">sendEmail</span>({
+    <span class="identifier">to</span>: <span class="identifier">allRecipients</span>.<span class="method">join</span>(<span class="string">','</span>),
+    <span class="identifier">subject</span>: <span class="identifier">emailSubject</span>,
+    <span class="identifier">htmlBody</span>: <span class="identifier">fullHtmlBody</span>,
+    <span class="identifier">name</span>: <span class="string">"Automation"</span>,
+  });
+
+  <span class="object">Logger</span>.<span class="method">log</span>(<span class="string">"Email sent to: "</span> + <span class="identifier">allRecipients</span>);
+
+}
+</code></pre>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-green-600 dark:text-green-400 mt-6 mb-4">Email Preview</h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Below is a preview of the email that will be sent by the script.
+        </p>
+        <div class="bg-gray-50 dark:bg-gray-950 rounded-md p-4 overflow-x-auto mb-6" style="background-color: #ffffff;">
+            <div style="border: 1px solid #ddd; padding: 10px; font-family: Arial, sans-serif; font-size: 0.9em;">
+                <p style="font-size: 1.1em; margin-bottom: 10px; color: #333;">
+                    Hi all,<br><br>
+                    Below is the monthly target trend.<br>
+                    Report generated on April 21, 2025.<br> 
+                </p>
+                <table style="border-collapse: collapse; width: 100%; margin-top: 5px; font-size: 0.7em;">
+                    <thead style="background-color: #f0f0f0;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 4px; text-align: left;">Team</th>
+                            <th style="border: 1px solid #ddd; padding: 4px; text-align: left;">Test</th>
+                            <th style="border: 1px solid #ddd; padding: 4px; text-align: left;">Target</th>
+                            <th style="border: 1px solid #ddd; padding: 4px; text-align: left;">Actuals</th>
+                            <th style="border: 1px solid #ddd; padding: 4px; text-align: left;">Pending</th>
+                            <th style="border: 1px solid #ddd; padding: 4px; text-align: left;">% Met</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">MTV</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">Test A</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">20</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">20</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">0</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left; background-color: #e0f7fa;">100.00%</td>
+                        </tr>
+                        <tr style="background-color: #f9f9f9;">
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">NYC</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">Test A</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">4</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">4</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">0</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left; background-color: #e0f7fa;">100.00%</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">ES</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">Test A</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">6</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">4</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left; background-color: #fffde7;">60.00%</td>
+                        </tr>
+                        <tr style="background-color: #f9f9f9;">
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">DE</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">Test B</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">8</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">8</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">0</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left; background-color: #e0f7fa;">100.00%</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">LON</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">Test B</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">13</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">11</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">2</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left; background-color: #fffde7;">84.62%</td>
+                        </tr>
+                        <tr style="background-color: #f9f9f9;">
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">JP</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">Test B</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left; background-color: #fffde7;">50.00%</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">NG</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">Test C</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">15</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">15</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">0</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left; background-color: #e0f7fa;">100.00%</td>
+                        </tr>
+                        <tr style="background-color: #f9f9f9;">
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">IN</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">Test C</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">9</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">8</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">1</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left; background-color: #fffde7;">88.89%</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">BR</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">Test D</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">2</td>
+                            <td style="border: 1px solid#ddd; padding: 4px; text-align: left;">8</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left; background-color: #ffebee;">20.00%</td>
+                        </tr>
+                        <tr style="background-color: #f9f9f9;">
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">IT</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">Test D</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">15</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">15</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left;">0</td>
+                            <td style="border: 1px solid #ddd; padding: 4px; text-align: left; background-color: #e0f7fa;">100.00%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-green-600 dark:text-green-400 mt-6 mb-4">Core Competencies & Project Highlights</h2>
+        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 mb-6">
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Automation of Report Generation:</span> The script automates the process of collecting data from a Google Sheet, formatting it, and generating a report. This eliminates the need for manual data compilation and report creation.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Scheduled Execution:</span> The use of time-based triggers ensures that the report is generated and sent automatically on a weekly basis, without any manual intervention.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Email Integration:</span> The script seamlessly integrates with Gmail to send the generated report as an email. This allows for efficient distribution of the report to stakeholders.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Data Formatting:</span> The script formats the data into a user-friendly HTML table, making it easy to read and understand.  Conditional formatting is applied to highlight percentage values based on performance.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Error Logging:</span>  The script uses the <code class="highlight">Logger</code> service to log important information, such as the trigger setup and email sending status. This helps in debugging and monitoring the script's execution.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Google Apps Script Proficiency:</span>  The project demonstrates a strong understanding of Google Apps Script, including working with spreadsheets, creating triggers, and sending emails.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-green-600 dark:text-green-400 mt-6 mb-4">Potential Applications</h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+            This script can be adapted for various applications, including:
+        </p>
+        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 mb-6">
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Marketing Campaign Performance:</span> Tracking campaign reach, engagement, conversion rates, and budget metrics.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Sales Performance Reporting:</span>  Generate weekly sales reports with data from a CRM.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Project Management:</span>  Automated updates on project milestones, task completion rates, and potential delays.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Financial Reporting:</span>  Automate regular summaries of key financial data, such as revenue, expenses, and profit margins.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Inventory Management:</span> Send daily or weekly updates on stock levels, low-stock items, and order fulfillment rates.</li>
+        </ul>
+    </div>
+</body>
+</html>

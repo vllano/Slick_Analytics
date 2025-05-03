@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f5f5dc;
+            color: #434a54;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .project-title {
+            font-size: 2.75em;
+            color: #6c567b;
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-size: 2em;
+            color: #4a8c8c;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #aed9b2;
+            padding-bottom: 10px;
+        }
+        .section-content ul {
+            list-style-type: disc;
+            margin-left: 25px;
+            color: #5c636a;
+            line-height: 1.7;
+        }
+        .section-content p {
+            color: #5c636a;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .visual-elements-list {
+            list-style-type: none;
+            padding-left: 0;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .visual-elements-list li {
+            margin-bottom: 10px;
+        }
+        .key-responsibility-list ul {
+            margin-left: 30px;
+        }
+        .key-responsibility-list h4 {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .optional-enhancements ul strong {
+            color: #434a54;
+            font-weight: bold;
+        }
+        .tool-highlight {
+            color: #81a2be;
+        }
+        .skill-highlight {
+            color: #98c379;
+        }
+        .visual-cue {
+            color: #d19a66;
+        }
+        .methodology-highlight {
+            color: #c678dd;
+        }
+        .quantifiable-highlight {
+            color: #e06c75;
+        }
+        /* Add padding and adjust font-weight for headings */
+        header h2 {
+            font-weight: 600;
+            padding-bottom: 10px;
+        }
+        .section-title {
+            font-weight: 600;
+            padding-top: 20px;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #aed9b2;
+        }
+        .key-responsibility-list h4 {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-beige-100">
+    <div class="container">
+        <header>
+            <h2 class="project-title">ADB Log Viewer and Analyzer Project</h2>
+        </header>
+
+        <section id="project-overview" class="project-overview">
+            <h3 class="section-title">Project Overview</h3>
+            <div class="section-content">
+                <p>
+                    This project involved the development of a desktop application for capturing, viewing, and analyzing Android Debug Bridge (ADB) logs. The primary goal was to create a tool that would significantly enhance the efficiency of Android developers in debugging and monitoring their applications. The application provides a user-friendly interface to filter, search, and interpret log data, addressing a common pain point in Android development.
+                </p>
+            </div>
+        </section>
+
+        <section id="key-responsibilities" class="key-responsibilities">
+            <h3 class="section-title">Key Responsibilities & Contributions</h3>
+            <div class="section-content key-responsibility-list">
+                <h4>Project Initiation & Planning:</h4>
+                <ul>
+                    <li>Defined project objectives, scope, and deliverables, focusing on the needs of Android developers.</li>
+                    <li>Conducted user research to understand the specific challenges and requirements related to log analysis.</li>
+                    <li>Developed a detailed project plan, including feature specifications, UI design, and development milestones.</li>
+                    <li>Selected appropriate technologies and tools, including Python, Tkinter, and ADB.</li>
+                    <li>Established a version control system (<span class="tool-highlight">Git</span>) and set up a project repository.</li>
+                </ul>
+
+                <h4>Project Execution & Development:</h4>
+                <ul>
+                    <li>Designed and implemented the application's user interface using <span class="tool-highlight">Tkinter</span>.</li>
+                    <li>Developed the core log capture functionality using Python's <span class="tool-highlight">subprocess</span> module to interact with ADB.</li>
+                    <li>Implemented log filtering and search capabilities, including real-time updates and keyword highlighting.</li>
+                     <li>Utilized <span class="tool-highlight">threading</span> to ensure the UI remained responsive during log capture.</li>
+                    <li>Created a system for parsing and displaying log messages in a readable and organized format.</li>
+                    <li>Conducted unit testing and integration testing to ensure application stability and functionality.</li>
+                    <li>Managed project dependencies and utilized a package manager.</li>
+                </ul>
+
+                <h4>Project Closure:</h4>
+                <ul>
+                    <li>Created a comprehensive user manual and documentation.</li>
+                    <li>Conducted user acceptance testing with target users (Android developers).</li>
+                    <li>Addressed user feedback and made necessary revisions.</li>
+                    <li>Prepared the project for distribution and deployment.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="key-skills" class="key-skills">
+            <h3 class="section-title">Key Skills Demonstrated</h3>
+            <div class="section-content">
+                <ul>
+                    <li><span class="skill-highlight">Project Planning & Organization</span></li>
+                    <li><span class="skill-highlight">User-Centered Design</span></li>
+                    <li><span class="skill-highlight">Software Development (Python)</span></li>
+                    <li><span class="skill-highlight">GUI Development (Tkinter)</span></li>
+                    <li><span class="skill-highlight">Concurrency (Threading)</span></li>
+                    <li><span class="skill-highlight">Command-Line Interface (CLI) Interaction</span></li>
+                    <li><span class="skill-highlight">Problem-Solving & Debugging</span></li>
+                    <li><span class="skill-highlight">Testing & Quality Assurance</span></li>
+                    <li><span class="skill-highlight">Documentation</span></li>
+                    <li><span class="skill-highlight">Version Control (Git)</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="visual-elements" class="visual-elements">
+            <h3 class="section-title">Visual Elements (Examples)</h3>
+            <div class="section-content">
+                <ul class="visual-elements-list">
+                    <li>Consider including a <span class="visual-cue">screenshot of the application's user interface</span>.</li>
+                    <li>Consider including a <span class="visual-cue">diagram illustrating the application's architecture</span> (e.g., how the UI interacts with the ADB process).</li>
+                    <li>Consider including a <span class="visual-cue">code snippet demonstrating a key function</span> (e.g., log parsing, filtering).</li>
+                    <li>Consider including a <span class="visual-cue">visual representation of the log display with color-coded messages</span>.</li>
+                </ul>
+                <p style="font-style: italic; color: #7f8c8d;">(Remember to replace these with actual visuals on your website)</p>
+            </div>
+        </section>
+
+        <section id="optional-enhancements" class="optional-enhancements">
+            <h3 class="section-title">Optional Enhancements</h3>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Future Improvements:</strong> Discuss potential future enhancements, such as:
+                        <ul>
+                            <li>Adding support for more advanced filtering options.</li>
+                            <li>Implementing real-time log analysis and visualization.</li>
+                            <li>Supporting different log formats.</li>
+                            <li>Adding plugin support for extensibility.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Lessons Learned:</strong> Reflect on the development process and highlight key lessons learned, such as:
+                        <ul>
+                            <li>Challenges faced and how they were overcome.</li>
+                            <li>Trade-offs made during development.</li>
+                            <li>Areas where the process could be improved.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
