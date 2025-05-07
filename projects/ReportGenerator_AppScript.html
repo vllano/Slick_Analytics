@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGT Report Generator Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f5f5dc;
+            color: #434a54;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .project-title {
+            font-size: 2.75em;
+            color: #6c567b;
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-size: 2em;
+            color: #4a8c8c;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #aed9b2;
+            padding-bottom: 10px;
+        }
+        .section-content ul {
+            list-style-type: disc;
+            margin-left: 25px;
+            color: #5c636a;
+            line-height: 1.7;
+        }
+        .section-content p {
+            color: #5c636a;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .visual-elements-list {
+            list-style-type: none;
+            padding-left: 0;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .visual-elements-list li {
+            margin-bottom: 10px;
+        }
+        .key-responsibility-list ul {
+            margin-left: 30px;
+        }
+        .key-responsibility-list h4 {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .optional-enhancements ul strong {
+            color: #434a54;
+            font-weight: bold;
+        }
+        .tool-highlight {
+            color: #81a2be;
+        }
+        .skill-highlight {
+            color: #98c379;
+        }
+        .visual-cue {
+            color: #d19a66;
+        }
+        .methodology-highlight {
+            color: #c678dd;
+        }
+        .quantifiable-highlight {
+            color: #e06c75;
+        }
+    </style>
+</head>
+<body class="bg-beige-100">
+    <div class="container">
+        <header>
+            <h2 class="project-title">Slides Report Generator</h2>
+        </header>
+
+        <section id="project-overview" class="project-overview">
+            <h3 class="section-title">Project Overview</h3>
+            <div class="section-content">
+                <p>
+                    The Report Generator project addresses the challenge of time-consuming and error-prone manual report generation for technical test data. The project aims to significantly reduce the time and effort required for operators to create post-collection reports. By automating data extraction, report population, and file linking, the Report Generator streamlines the reporting process, minimizes user input errors, and ensures report consistency. This automation allows operators to allocate more time to data collection and other critical post-collection tasks. The solution utilizes Google Workspace and Apps Script to generate Google Slides reports with a few clicks, based on data from testing apps and other sources.
+                </p>
+            </div>
+        </section>
+
+        <section id="problem-statement" class="problem-statement">
+            <h3 class="section-title">Problem Statement</h3>
+            <div class="section-content">
+                <p>
+                    The Field Operations team faced significant challenges with their report generation process. My analysis revealed the following key issues:
+                </p>
+                <ul>
+                    <li><strong>Inefficiency:</strong> Manual report creation was a time-consuming process, diverting resources from core testing activities.</li>
+                    <li><strong>Inconsistency:</strong> Reports varied in format and content, making it difficult to compare data across different tests.</li>
+                    <li><strong>Data Accuracy:</strong> Manual data entry from device logs to reports was prone to human error, potentially compromising report reliability.</li>
+                    <li><strong>Scalability:</strong> The manual process was not scalable to handle the increasing volume of test data.</li>
+                    <li><strong>Template Management:</strong> The use of multiple report templates added complexity and increased the risk of using the wrong template.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="requirements-and-solution" class="requirements-and-solution">
+            <h3 class="section-title">Requirements and Solution Design</h3>
+            <div class="section-content">
+                <p>
+                    To address these challenges, I defined the following key requirements for the automated solution:
+                </p>
+                <ul>
+                    <li><strong>Automation:</strong> Automate the extraction of data from testing apps and population of Google Slides templates.</li>
+                    <li><strong>Standardization:</strong> Ensure consistent report formatting and content across all tests.</li>
+                    <li><strong>Accuracy:</strong> Minimize manual data entry to improve data accuracy and reduce errors.</li>
+                    <li><strong>Efficiency:</strong> Reduce the time required to generate reports.</li>
+                    <li><strong>Template Management:</strong> Automate the selection of the correct report template.</li>
+                    <li><strong>Scalability:</strong> The solution should be able to handle a growing volume of test data.</li>
+                </ul>
+                <br>
+                <p>
+                    The proposed solution, the Report Generator, was designed to meet these requirements by:
+                </p>
+                <ul>
+                    <li>Automating data retrieval from testing apps using unique identifier keys.</li>
+                    <li>Dynamically selecting the appropriate report template based on test type and device configuration.</li>
+                    <li>Automatically generating charts and tables to ensure data accuracy and consistency.</li>
+                    <li>Saving generated reports to a designated Google Drive folder for easy access and organization.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="implementation-and-dataflow" class="implementation-and-dataflow">
+            <h3 class="section-title">Implementation and Data Flow</h3>
+            <div class="section-content">
+                <p>
+                    The Report Generator was implemented using Google Apps Script, leveraging the following Google Workspace services:
+                </p>
+                <ul>
+                    <li><strong>Google Sheets:</strong> Device performance data from testing applications was exported to Google Sheets using BigQuery data export functionality.</li>
+                    <li><strong>Google Forms:</strong> Used  to gather supplementary file uploads and relevant links.</li>
+                    <li><strong>Google Slides:</strong> Used to create and populate report templates.</li>
+                    <li><strong>Google Drive:</strong> Used for storage and organization of report templates and generated reports.</li>
+                </ul>
+                <br>
+                <p>
+                    The automated report generation process follows these steps:
+                </p>
+                <ul>
+                    <li><strong>Data Input:</strong> The script reads test data and report parameters from a specified Google Sheets spreadsheet.</li>
+                    <li><strong>Template Selection:</strong> The script automatically selects the correct Google Slides template based on pre-defined criteria.</li>
+                    <li><strong>Report Generation:</strong> The script creates a copy of the template and populates it with the relevant data from Google Sheets.</li>
+                    <li><strong>Output:</strong> The generated report is saved as a Google Slides presentation in a designated Google Drive folder.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="results-and-impact" class="results-and-impact">
+            <h3 class="section-title">Results and Business Impact</h3>
+            <div class="section-content">
+                <p>
+                    The implementation of the Report Generator has resulted in significant improvements:
+                </p>
+                <ul>
+                    <li><strong>Increased Efficiency:</strong> Report generation time has been reduced by automating the process, freeing up operator time for other tasks.</li>
+                    <li><strong>Improved Data Accuracy:</strong> Automation has minimized manual data entry errors, leading to more reliable and accurate reports.</li>
+                    <li><strong>Enhanced Consistency:</strong> Standardized report templates ensure a consistent format and presentation of data.</li>
+                    <li><strong>Increased Scalability:</strong> The automated process can handle a larger volume of reports, supporting future growth in testing activities.</li>
+                    <li><strong>Reduced Turnaround Time:</strong> Faster report generation enables quicker dissemination of test results to stakeholders.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills-demonstrated" class="key-skills">
+            <h3 class="section-title">Key Skills Demonstrated</h3>
+            <div class="section-content">
+                <ul>
+                    <li><span class="skill-highlight">Project Planning & Organization</span></li>
+                    <li><span class="skill-highlight">Requirements Elicitation</span></li>
+                    <li><span class="skill-highlight">Business Process Analysis</span></li>
+                    <li><span class="skill-highlight">Stakeholder Communication</span></li>
+                    <li><span class="skill-highlight">Solution Design</span></li>
+                    <li><span class="skill-highlight">Google Workspace (Sheets, Slides, Apps Script)</span></li>
+                    <li><span class="skill-highlight">Data Analysis</span></li>
+                    <li><span class="skill-highlight">Problem-Solving</span></li>
+                    <li><span class="skill-highlight">Documentation</span></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <br>
+        <p style="text-align: center;">&copy; 2025 Victor Llano. All rights reserved.</p> 
+    </footer>
+</body>
+</html>
