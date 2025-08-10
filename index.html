@@ -1,799 +1,195 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137017204-1"></script>
-	<script>
-  	window.dataLayer = window.dataLayer || [];
- 	function gtag(){dataLayer.push(arguments);}
-  	gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Llano | Senior Business Analyst</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a professional look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles to override Tailwind or add unique touches */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind's slate-50 */
+        }
+        .text-blue-950 { color: #072a4e; }
+        .bg-blue-950 { background-color: #072a4e; }
+        .border-yellow-400 { border-color: #facc15; }
+        .card-shadow { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
 
-  	gtag('config', 'UA-137017204-1');
-	</script>
+    <!-- Header Section -->
+    <header class="bg-blue-950 text-white py-12">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="text-center md:text-left mb-6 md:mb-0">
+                <h1 class="text-4xl sm:text-5xl font-bold tracking-tight">Victor Llano</h1>
+                <p class="mt-2 text-xl sm:text-2xl text-gray-200">Senior Business Analyst | Consulting</p>
+                <p class="mt-1 text-sm sm:text-base text-yellow-400">Strategy & Operations | Product Growth | Marketing Analytics | Financial Modeling | Executive Advisory</p>
+            </div>
+            <div class="relative w-40 h-40">
+                <img src="https://placehold.co/400x400/000000/FFFFFF/png?text=VL" alt="Victor Llano Profile" class="w-40 h-40 rounded-full object-cover ring-4 ring-yellow-400 transform transition-transform hover:scale-105 duration-300">
+            </div>
+        </div>
+    </header>
 
+    <!-- Main Content Container -->
+    <main class="container mx-auto px-4 py-12 space-y-16">
 
+        <!-- Summary Section -->
+        <section id="summary" class="bg-white p-8 rounded-xl card-shadow">
+            <h2 class="text-3xl font-bold text-blue-950 mb-6 border-b-2 border-gray-200 pb-2">Professional Summary</h2>
+            <p class="text-lg leading-relaxed">
+                Highly analytical and results driven professional with 6+ years of experience driving strategic initiatives to solve complex business challenges and generate measurable growth for global tech companies. Expert in full-stack analytics, encompassing ETL pipeline design,  advanced statistical analysis, and performance dashboard development. Proven ability to influence product, marketing and sales strategies, optimize operational processes, and present actionable insights to leadership, fostering data literacy and continuous growth.
+            </p>
+        </section>
 
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>VIC The Analyst</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+        <!-- Key Projects/Case Studies Section -->
+        <section id="projects" class="bg-white p-8 rounded-xl card-shadow">
+            <h2 class="text-3xl font-bold text-blue-950 mb-6 border-b-2 border-gray-200 pb-2">Project Portfolio</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 (Google) -->
+                <a href="projects/Product_Growth_Project.html" class="block relative bg-gray-50 p-6 rounded-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer border-2 border-transparent hover:border-yellow-400">
+                    <svg class="h-6 w-6 absolute top-4 right-4 text-gray-400 group-hover:text-yellow-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold text-blue-950">Product Growth</h3>
+                    <p class="text-gray-600 mt-2"><strong>Challenge:</strong> A high cart abandonment rate (>60%) in the checkout funnel was causing significant revenue leakage.</p>
+                    <p class="text-gray-600 mt-2"><strong>Solution:</strong>  Designed and executed an A/B test, introducing a simplified single-page checkout to reduce user friction.</p>
+                    <p class="mt-4 text-green-700 font-semibold">** Increased checkout completion by 7.2pp, unlocking an estimated $1.5M in additional annual revenue.</p>
+                </a>
+                <!-- Project 2 (Google) -->
+                <a href="projects/Lead_Funnel_Optimization_Project.html" class="block relative bg-gray-50 p-6 rounded-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer border-2 border-transparent hover:border-yellow-400">
+                    <svg class="h-6 w-6 absolute top-4 right-4 text-gray-400 group-hover:text-yellow-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold text-blue-950">Operational Efficiency</h3>
+                    <p class="text-gray-600 mt-2"><strong>Challenge:</strong> High Customer Acquisition Costs (CAC) and a long sales cycle were driven by sales team inefficiency from poor lead quality.</p>
+                    <p class="text-gray-600 mt-2"><strong>Solution:</strong> Developed a predictive lead scoring model and re-allocated marketing budget from inefficient channels to high-value ones.</p>
+                    <p class="mt-4 text-green-700 font-semibold">** Projected to reduce CAC by 18% and shorten the sales cycle by 20% (from 35 to 28 days).</p>
+                </a>
+                <!-- Project 3 (Achieve) -->
+                <a href="projects/Marketing_Attribution_Project.html" class="block relative bg-gray-50 p-6 rounded-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer border-2 border-transparent hover:border-yellow-400">
+                    <svg class="h-6 w-6 absolute top-4 right-4 text-gray-400 group-hover:text-yellow-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold text-blue-950">Marketing Analytics</h3>
+                    <p class="text-gray-600 mt-2"><strong>Challenge:</strong> A flawed last-touch attribution model was misvaluing marketing channels, leading to declining ROAS and inefficient budget allocation.</p>
+                    <p class="text-gray-600 mt-2"><strong>Solution:</strong> Developed a time-decay multi-touch attribution model in Python & SQL to identify undervalued channels and guide a new budget strategy.</p>
+                    <p class="mt-4 text-green-700 font-semibold">** Drove a 22% projected increase in marketing ROAS by reallocating a $400k budget to undervalued channels.</p>
+                </a>
+                <!-- Project 4 (Achieve) -->
+                <a href="projects/Data_Pipeline_Project.html" class="block relative bg-gray-50 p-6 rounded-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer border-2 border-transparent hover:border-yellow-400">
+                    <svg class="h-6 w-6 absolute top-4 right-4 text-gray-400 group-hover:text-yellow-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold text-blue-950">Reporting Pipeline</h3>
+                    <p class="text-gray-600 mt-2"><strong>Challenge:</strong> Weekly reporting on survey progress was a repetitive, time-consuming manual task that risked delays and human error.</p>
+                    <p class="text-gray-600 mt-2"><strong>Solution:</strong> Developed a Google Apps Script to fully automate the reporting pipeline, from data extraction in Sheets to generating and emailing a formatted HTML report.</p>
+                    <p class="mt-4 text-green-700 font-semibold">** Completely eliminated manual effort in weekly reporting, ensuring stakeholders receive timely and accurate performance updates.</p>
+                </a>
+                <!-- Project 5 (AWS) -->
+                <a href="projects/MarketingAnalyrics_Tableau.html" class="block relative bg-gray-50 p-6 rounded-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer border-2 border-transparent hover:border-yellow-400">
+                    <svg class="h-6 w-6 absolute top-4 right-4 text-gray-400 group-hover:text-yellow-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold text-blue-950">Data Visualization</h3>
+                    <p class="text-gray-600 mt-2"><strong>Challenge:</strong> Stakeholders lacked a unified, real-time view of campaign performance, making it difficult to assess ROI and allocate budget effectively.</p>
+                    <p class="text-gray-600 mt-2"><strong>Solution:</strong> Developed an interactive Tableau dashboard with a Python-scripted data pipeline to visualize UTM performance, engagement, and conversion funnels.</p>
+                    <p class="mt-4 text-green-700 font-semibold">** Empowered the marketing team with self-service analytics, enabling real-time ad spend optimization and strategic planning.</p>            
+                </a>
+                <!-- Project 6 (Apple) -->
+                <a href="projects/Puller_Python.html" class="block relative bg-gray-50 p-6 rounded-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer border-2 border-transparent hover:border-yellow-400">
+                    <svg class="h-6 w-6 absolute top-4 right-4 text-gray-400 group-hover:text-yellow-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold text-blue-950">Process Optimization</h3>
+                    <p class="text-gray-600 mt-2"><strong>Challenge:</strong> A manual, error-prone process for retrieving test device logs was consuming significant time and delaying analysis.</p>
+                    <p class="text-gray-600 mt-2"><strong>Solution:</strong> Architected a custom Python application to completely automate log extraction, parsing, and organization from multiple test devices.</p>
+                    <p class="mt-4 text-green-700 font-semibold">** Increased team efficiency by reducing log retrieval time by an average of 21 minutes per instance.</p>
+                </a>
+            </div>
+        </section>
 
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+        <!-- Skills Section -->
+        <section id="skills" class="bg-white p-8 rounded-xl card-shadow">
+            <h2 class="text-3xl font-bold text-blue-950 mb-6 border-b-2 border-gray-200 pb-2">Core Competencies</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Skill Card 1 -->
+                <div class="p-4 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                    <h4 class="font-semibold text-lg text-blue-950">Business Strategy</h4>
+                    <ul class="mt-2 text-gray-600 list-disc list-inside">
+                        <li>Strategic Planning & Product Growth</li>
+                        <li>Process Optimization (BPMN)</li>
+                        <li>Requirements Gathering</li>
+                        <li>Experimentation Design</li>
+                        <li>Business Case Development</li>
+                        <li>KPI & OKR Alignment</li>
+                    </ul>
+                </div>
+                <!-- Skill Card 2 -->
+                <div class="p-4 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                    <h4 class="font-semibold text-lg text-blue-950">Data Analytics</h4>
+                    <ul class="mt-2 text-gray-600 list-disc list-inside">
+                        <li>Data Modeling & Statistical Analysis</li>
+                        <li>A/B & Multivariate Testing</li>
+                        <li>Forecasting & Trend Analysis</li>
+                        <li>Market & Competitive Analysis</li>
+                        <li>Root Cause Analysis</li>
+                        <li>Data Visualization & Storytelling</li>
+                        <li>ETL / Data Pipeline Design</li>
+                    </ul>
+                </div>
+                <!-- Skill Card 3 -->
+                <div class="p-4 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                    <h4 class="font-semibold text-lg text-blue-950">Stakeholder Leadership</h4>
+                    <ul class="mt-2 text-gray-600 list-disc list-inside">
+                        <li>Executive Presentations & Advisory</li>
+                        <li>Change Management & Adoption</li>
+                        <li>Cross-functional Alignment</li>
+                        <li>Documentation</li>
+                        <li>Mentoring</li>
+                    </ul>
+                </div>
+                <!-- Skill Card 4 -->
+                <div class="p-4 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                    <h4 class="font-semibold text-lg text-blue-950">Tools & Technologies</h4>
+                    <ul class="mt-2 text-gray-600 list-disc list-inside">
+                        <li>SQL, Python, JavaScript</li>
+                        <li>Tableau, Looker, Power BI</li>
+                        <li>Google Cloud Platform (GCP)</li>
+                        <li>Jira & Confluence</li>
+                        <li>DataNexus, NotebookLM</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+        <!-- Contact Section -->
+        <section id="contact" class="bg-white p-8 rounded-xl card-shadow text-center">
+            <h2 class="text-3xl font-bold text-blue-950 mb-6 border-b-2 border-gray-200 pb-2">Get in Touch</h2>
+            <p class="text-lg mb-4">I am available to discuss how my expertise can drive value for your organization.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+                <a href="https://www.linkedin.com/in/vicllano" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md">
+                    Connect on LinkedIn
+                </a>
+                <a href="mailto:vicrllano@gmail.com" target="_blank" class="bg-gray-200 text-gray-700 px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-300 transition-colors duration-300 shadow-md">
+                    Email Me
+                </a>
+            </div>
+        </section>
 
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" href="icomoon/style.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+    </main>
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-	</head>
-	<body>
-	
-	<div id="colorlib-page">
-		<div class="container-wrap">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<div class="text-center">
-				<a href="index.html" style="font-family: Playfair Display, Georgia, serif; font-size: 24px; color: #ffffff; background-color: #000000; border: 2px solid #000000; padding: 5px; border-radius: 5px;"><strong>SLICK</strong></a><a style="font-family: Playfair Display, Georgia, serif; font-size: 24px; color: #000000;"><span> <b>ANALYTICS</b></span></a><br><br>
-				<div
-					class="author-img"
-					style="
-					background-image: url(images/my_pic.jpg);
-					width: 240px; /* Set the width */
-					height: 240px; /* Set the height */
-					background-size: cover; /* Maintain image aspect ratio and cover the container */
-					border-radius: 50%; /* keep the image rounded */
-					"
-				></div>
-				<h1 id="colorlib-logo"><a href="index.html" style="font-family: Playfair Display, Georgia, serif; font-size: 24px;">Victor Llano</a></h1>
-				<span class="position"><a href="#">Business Analyst - Consulting</a></span>
-			</div>
-			<nav id="colorlib-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						<li><a href="#" data-nav-section="about">About</a></li>
-						<li><a href="#" data-nav-section="skills">Skills</a></li>
-						<li><a href="#" data-nav-section="projects">Projects</a></li>
-						<li><a href="#" data-nav-section="experience">Experience</a></li>
-						<li><a href="#" data-nav-section="education">Education</a></li>
-						<li><a href="#" data-nav-section="contact">Contact</a></li>
-						<li><a href="#" data-nav-section="services"></a></li>
-						<li><a href="#" data-nav-section="blog"></a></li>
-						<li><a href="#" data-nav-section="home"></a></li>
-					</ul>
-				</div>
-			</nav>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <p class="text-sm">&copy; 2025 Victor Llano. All rights reserved.</p>
+    </footer>
 
-			<div class="colorlib-footer">
-				<p></p>
-				<ul>
-					<li><a href="https://www.linkedin.com/in/vicllano" target="_blank"><i class="icon-linkedin2"></i></a></li>
-					<li><a href="mailto:vicrllano@gmail.com" target="_blank"><i class="icon-mail"></i></a></li>
-					<li><a href="https://github.com/vllano/Porfolio_Projects.github.io" target="_blank"><i class="icon-github"></i></a></li>
-				</ul>
-			</div>
-
-		</aside>
-
-		<div id="colorlib-main">
-
-			<section class="colorlib-about" data-section="about">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<span class="heading-meta"><strong>About Me</strong></span>
-										<h2 class="colorlib-heading"><strong>Who Am I?</strong></h2>
-										<p><strong>Hi I'm Victor Llano.</strong> 
-											Results-driven Analyst with over 6  years of experience delivering data-informed business solutions across diverse industries including finance and technology. Skilled in bridging the gap between business needs and technical solutions, with a strong background in requirements gathering, stakeholder management, process improvement, and advanced analytics.<br><br>
-
-											Proven track record of leading cross-functional teams to deliver high-impact projects, driving operational efficiency, and optimizing strategic decision-making through actionable insights. Recognized for strong communication skills, analytical mindset, and the ability to align business objectives with technology to achieve measurable results.
-											.</p>
-										
-									</div>
-								</div>
-							</div>
-						</div>	
-					</div>
-				</div>
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<h2 style="font-size:110%;"><strong>How Others Describe My Work Style:</strong></h2>
-						</div>
-					</div>
-					<div class="row row-pt-md">
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-1">
-								<span class="icon">
-									<i class="icon-bulb"></i>
-								</span>
-								<div class="desc">
-									<h3>Innovative</h3>
-									<p></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-2">
-								<span class="icon">
-									<i class="icon-data"></i>
-								</span>
-								<div class="desc">
-									<h3>Data-driven</h3>
-									<p></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-3">
-								<span class="icon">
-									<i class="icon-chart-bar"></i><!--icon-phone3 -->
-								</span>
-								<div class="desc">
-									<h3>Analytical</h3>
-									<p></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-4">
-								<span class="icon">
-									<i class="icon-pen"></i>
-								</span>
-								<div class="desc">
-									<h3>Proactive</h3>
-									<p></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-5">
-								<span class="icon">
-									<i class="icon-map"></i><!-- icon-globe-outline -->
-								</span>
-								<div class="desc">
-									<h3>Strategic</h3>
-									<p></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-6">
-								<span class="icon">
-									<i class="icon-group"></i><!-- icon-heart -->
-								</span>
-								<div class="desc">
-									<h3>Collaborative</h3>
-									<p></p>
-								</div>
-							</div>
-						</div>
-					
-					</div>
-
-						<div class="row">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">	
-											<h2 style="font-size:110%;"><strong>Professional Interests:</strong></h2>
-										</div>
-						
-									</div>
-								</div>
-							</div>
-						
-							<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-								<div class="services color-2">
-									<span class="icon2"><i class="icon-bulb"></i></span>
-									<h3>Business Intelligence</h3>
-								</div>
-							</div>
-							<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-								<div class="services color-4">
-									<span class="icon2"><i class="icon-cog2"></i></span>
-									<h3>Process Optimization</h3>
-								</div>
-							</div>
-							<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-								<div class="services color-3">
-									<span class="icon2"><i class="icon-map"></i></span>
-									<h3>Strategic Planning</h3>
-								</div>
-							</div>
-							<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-								<div class="services color-6">
-									<span class="icon2"><i class="icon-chart-line"></i></span>
-									<h3>Statistical Analysis</h3>
-								</div>
-							</div>
-							<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-								<div class="services color-2">
-									<span class="icon2"><i class="icon-data"></i></span>
-									<h3>Data Warehousing</h3>
-								</div>
-							</div>
-							<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-								<div class="services color-4">
-									<span class="icon2"><i class="icon-layers2"></i></span>
-									<h3>ETL/ELT Pipeline Design</h3>
-								</div>
-							</div>
-							<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-								<div class="services color-3">
-									<span class="icon2"><i class="icon-phone3"></i></span>
-									<h3>Digital Transformation</h3>
-								</div>
-							</div>
-							<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-								<div class="services color-6">
-									<span class="icon2"><i class="icon-chart-pie"></i></span>
-									<h3>Data Visualization</h3>
-								</div>
-							</div>
-						</div>
-					
-				</div>
-			</section>
-
-			<section class="colorlib-skills" data-section="skills">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta"><strong>My Specialty</strong></span>
-							<h2 class="colorlib-heading animate-box"><strong>My Skills</strong></h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<p>I bring a strong technical foundation that complements my business acumen, enabling me to bridge the gap between data, technology, and strategic decision-making.</p>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Python</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="100"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:100%">
-								    <span>100%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>SQL</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="100"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:100%">
-								    <span>100%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Google Suite/MS Suite</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="100"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:100%">
-								    <span>100%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>Tableau/PowerBI/Looker</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="95"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:95%">
-								    <span>95%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>HTML5/CSS3</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="85"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
-								    <span>85%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>JavaScript</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="90"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
-								    <span>90%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="colorlib-work" data-section="projects">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta"><strong>Featured Work</strong></span>
-							<h2 class="colorlib-heading animate-box"><strong>Project Portfolio</strong></h2>
-						</div>
-					</div>
-					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-						<div class="col-md-12">
-							<p class="work-menu">Below are selected projects that showcase my approach to analytics, from data exploration to actionable insights and strategic outcomes.</p>
-						</div>
-					</div>
-					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-						<div class="col-md-12">
-							<h4 class="work-menu"><strong>Data Analysis and Automation with SQL and Apps Script</strong></h4>
-							<p class="work-menu">This section highlights two data-centric projects. The first demonstrates expertise in SQL for data analysis, specifically tracking throughput and quantifying the variance between actual results and targets to provide insights into operational performance. The second project showcases skills in automating report generation and distribution using Google Apps Script, leveraging the data analysis from the first project to streamline workflows and ensure timely delivery of critical information.</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(images/etl.jpeg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="projects/DataTransformation_SQL.html" target="_blank">Throughput Tracking and Target Analysis</a></h3>
-										<a href="projects/DataTransformation_SQL.html" target="_blank"><span><strong>SQL</strong></span></a>
-										<a href="projects/DataTransformation_SQL.html" target="_blank"><span>ETL | Data manipulation | Data pipeline | Data warehousing</span></a>
-										<p class="icon">
-											<span><a href="projects/DataTransformation_SQL.html"><i class="icon-share3"></i></a></span>
-											<span><a href="projects/DataTransformation_SQL.html"><i class="icon-eye"></i> 172</a></span>
-											<span><a href="projects/DataTransformation_SQL.html"><i class="icon-heart"></i> 61</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(images/apps-script.png);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="projects/WeeklyEmail_AppsScript.html" target="_blank">Automated Weekly Reporting</a></h3>
-										<a href="projects/WeeklyEmail_AppsScript.html" target="_blank"><span><strong>Apps Script</strong></span></a>
-										<a href="projects/WeeklyEmail_AppsScript.html" target="_blank"><span>Automation | Spreadsheet manipulation | Email integration | HTML formatting</span></a>
-										<p class="icon">
-											<span><a href="projects/WeeklyEmail_AppsScript.html"><i class="icon-share3"></i></a></span>
-											<span><a href="projects/WeeklyEmail_AppsScript.html"><i class="icon-eye"></i> 205</a></span>
-											<span><a href="projects/WeeklyEmail_AppsScript.html"><i class="icon-heart"></i> 67</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-						<div class="col-md-12">
-							<br><h4 class="work-menu"><strong>Exploring Data with Python and Tableau</strong></h4>
-							<p class="work-menu">This section showcases two projects. First, an A/B Testing Analysis demonstrating my ability to conduct rigorous statistical evaluations, perform funnel analysis, and derive actionable recommendations for optimizing website conversion rates. The second features a Marketing Analytics Dashboard. It provides a holistic view of marketing campaign performance and user behavior, empowering data-driven decision-making for enhanced marketing strategies. Together, these projects underscore my end-to-end capabilities in data manipulation, advanced analytical techniques, insightful visualization, and the communication of strategic findings to drive impactful business decisions.</p>
-						</div>
-					</div>
-					<div class="row">	
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(images/python.png);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="projects/AbTesting_Python.html" target="_blank">Statistical A/B Testing Analysis</a></h3>
-										<a href="projects/AbTesting_Python.html" target="_blank"><span><strong>Python</strong></span></a>
-										<a href="projects/AbTesting_Python.html" target="_blank"><span>Programming | Data Segmentation | Exploratory Data Analysis | Hypothesis Testing</span></a>
-										<p class="icon">
-											<span><a href="projects/AbTesting_Python.html"><i class="icon-share3"></i></a></span>
-											<span><a href="projects/AbTesting_Python.html"><i class="icon-eye"></i> 150</a></span>
-											<span><a href="projects/AbTesting_Python.html"><i class="icon-heart"></i> 59</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(images/tableau_logo.png);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="projects/MarketingAnalyrics_Tableau.html" target="_blank">Marketing Performance Analytics</a></h3>
-										<a href="projects/MarketingAnalyrics_Tableau.html" target="_blank"><span><strong>Tableau</strong></span></a>
-										<a href="projects/MarketingAnalyrics_Tableau.html" target="_blank"><span>Dashboard Design | Filters and Parameters |  Calculated Fields | Marketing KPIs</span></a>
-										<p class="icon">
-											<span><a href="projects/MarketingAnalyrics_Tableau.html"><i class="icon-share3"></i></a></span>
-											<span><a href="projects/MarketingAnalyrics_Tableau.html"><i class="icon-eye"></i> 139</a></span>
-											<span><a href="projects/MarketingAnalyrics_Tableau.html"><i class="icon-heart"></i> 50</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-						<div class="col-md-12">
-							<br><h4 class="work-menu"><strong>Workflow Optimization with Python and Apps Script</strong></h4>
-							<p class="work-menu">This section features two workflow optimization projects developed using Python and Google Apps Script, respectively. Both initiatives were designed to streamline repetitive tasks, reduce manual effort, and improve operational efficiency within different organizational contexts. By leveraging automation and scripting, each project demonstrates practical problem-solving, scalability, and a strong alignment with real-world business needs.</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(images/workflow-optimization.png);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="projects/Puller_Python.html" target="_blank">Automated Log Pulling</a></h3>
-										<a href="projects/Puller_Python.html" target="_blank"><span><strong>Python</strong></span></a>
-										<a href="projects/Puller_Python.html" target="_blank"><span>Android Debug Bridge | GUI Development | File System Operations | Command Line Interaction</span></a>
-										<p class="icon">
-											<span><a href="projects/Puller_Python.html"><i class="icon-share3"></i></a></span>
-											<span><a href="projects/Puller_Python.html"><i class="icon-eye"></i> 146</a></span>
-											<span><a href="projects/Puller_Python.html"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(images/wf_op.png);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="projects/ReportGenerator_AppScript.html" target="_blank">Slides Report Generator</a></h3>
-										<a href="projects/ReportGenerator_AppScript.html" target="_blank"><span><strong>Apps Script</strong></span></a>
-										<a href="projects/ReportGenerator_AppScript.html" target="_blank"><span>Google Suite API Interaction | Array Manipulation | Data Processing | Logging and Debugging</span></a>
-										<p class="icon">
-											<span><a href="projects/ReportGenerator_AppScript.html"><i class="icon-share3"></i></a></span>
-											<span><a href="projects/ReportGenerator_AppScript.html"><i class="icon-eye"></i> 120</a></span>
-											<span><a href="projects/ReportGenerator_AppScript.html"><i class="icon-heart"></i> 40</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box">
-							<p><a class="btn btn-primary btn-lg btn-load-more">More coming soon! <i class="icon-reload"></i></a></p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="colorlib-experience" data-section="experience">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta"><strong>Experience</strong></span>
-							<h2 class="colorlib-heading animate-box"><strong>Work Experience</strong></h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-				         <div class="timeline-centered">
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
-					            <div class="timeline-entry-inner">
-
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
-
-					               <div class="timeline-label">
-					               	<h2><strong>Senior Business Analyst</strong></h2>
-					                  <h2><a href="#"><strong>Google</strong> via Cognizant</a> <span>March 2023 - Present</span></h2>
-										<p><ul style="list-style-type:circle;">
-											<li>Led a comprehensive analysis of existing workflows, identifying key bottlenecks and implementing process improvements that increased operational throughput by 10% and reduced steps, enhancing overall efficiency.</li>
-											<li>Developed and executed complex SQL queries to synthesize data from disparate sources, creating unified datasets that provided critical business insights and supported strategic decision-making.</li>
-											<li>Translated complex data findings into clear and concise presentations and reports for both technical and non-technical audiences.</li>
-											<li>Designed multivariate dashboards, improving data accessibility by 30% and enabling proactive monitoring of KPIs.</li>
-											<li>Engineered and automated ETL pipelines using Python and SQL, streamlining data extraction and reporting processes resulting in a 15% reduction of data processing time.</li>
-											<li>Enforced data validation and quality checks within ETL processes, improving data accuracy by 23% and ensuring reliability.</li>
-											<li>Analyzed resource allocation and utilization patterns, providing data-driven recommendations that resulted in a 20% reduction in project labor costs through more efficient resource management.</li>
-										</ul></p>
-					               </div>
-					            </div>
-					         </article>
-
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-									<h2><strong>Senior Data Analyst</strong></h2>
-									<h2><a href="#"><strong>Achieve </strong></a> <span> February 2022 - February 2023</span></h2>
-					                  	<p><ul style="list-style-type:circle;">
-											<li>Analyzed extensive user experience data across multiple business units, providing strategic insights that informed a successful transition to a new multi-product brand's marketing strategy.</li>
-											<li>Designed comprehensive full-funnel visibility dashboards for stakeholders, enabling a deeper understanding of the customer journey and facilitating data-driven optimization of marketing campaigns.</li>
-											<li>Developed complex SQL queries to analyze website traffic and user behavior, providing actionable insights that informed website content optimization and improved overall user experience.</li>
-											<li>Partnered with data science teams to operationalize predictive analytics models (lead probability, revenue), optimizing marketing spend and improving lead qualification efficiency.</li>
-											<li>Collaborated with the sales team to analyze lead quality and conversion rates across marketing channels, contributing to a 10% increase in sales qualified leads and improved sales effectiveness.</li>
-											<li>Led A/B testing initiatives across website and email campaigns, identifying winning variations that improved lead generation by 12% and reduced bounce rates by 8%.</li>
-										</ul></p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-									<div class="timeline-label">
-										<h2><strong>Data Analyst</strong></h2>
-										<h2><a href="#"><strong> Amazon Web Services</strong></a> <span>March 2020 - February 2022</span></h2>
-											<p><ul style="list-style-type:circle;">
-												<li>Analyzed large-scale customer behavior data on Amazon's platform to identify key trends and provide data-driven insights.</li>
-												<li>Contributed to the development and execution of A/B tests to optimize website content, marketing messaging, and product recommendations, directly impacting user engagement.</li>
-												<li>Developed automated dashboards and workflows to enhance reporting efficiency and provide timely insights into marketing channel performance for stakeholders.</li>
-												<li>Collaborated with data engineering teams to gather requirements and build efficient and scalable data pipelines.</li>
-											</ul></p>
-									</div>
-					            </div>
-					         </article>
- 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInBottom">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-4">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-									<h2><strong>Data Analyst</strong></h2>
-									<h2><a href="#"><strong>Apple Inc.</strong> via Apex Systems</a> <span>August 2019 - March 2020</span></h2>
-										<p><ul style="list-style-type:circle;">
-											<li>Defined and documented business requirements for new features and enhancements across product lines, demonstrating an understanding of the data needs of various business functions.</li>
-											<li>Collaborated with engineering, design, and marketing teams to analyze the impact of new product launches on existing services and identify opportunities for synergistic growth.</li>
-											<li>Conducted analysis on user adoption and engagement, providing insights to product teams on how to enhance integration and drive greater ecosystem stickiness.</li>
-										</ul></p>
-									</div>
-					            </div>
-					         </article>
-
-					         
-
-					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-none">
-					               </div>
-					            </div>
-					         </article>
-					      </div>
-					   </div>
-				   </div>
-				</div>
-			</section>
-
-			<section class="colorlib-education" data-section="education">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta"><strong>Education</strong></span>
-							<h2 class="colorlib-heading animate-box"><strong>Education</strong></h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<div class="fancy-collapse-panel">
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingOne">
-									        <h4 class="panel-title">
-									            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">B.S. in Business Administration - Information Systems
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-									         <div class="panel-body">
-									            <div class="row">
-										      		<div class="col-md-6">
-										      			<p><li><strong>San Francisco State University</strong></li> 
-										      				<ul style="list-style-type:square;">
-										      				<li>San Francisco, CA</li>
-										      				<li>GPA: 3.45</li></ul>
-
-										      			</p>
-										      		</div>
-										      		<div class="col-md-6">
-										      			<p><li><strong>Relevant Coursework:</strong><br> 
-        App Development for Data Analytics, Managing Enterprise Data, IT Project Management, Information Systems Analysis & Design, Business App Development, Business Finance, Operations Management, Principles of Marketing, Information Security Management, Calculus, Statistics & Probability.</li></p>
-										      		</div>
-										      	</div>
-									         </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingTwo">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Certificate in Python Programming
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-									        <div class="panel-body">
-									            <p><li><strong>De Anza College</strong></li>
-									            	<ul style="list-style-type:square;">
-									            	<li>Cupertino, CA</li></ul></p>
-													
-									        </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingThree">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">certificate in marketing management
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-									        <div class="panel-body">
-									            <p><li><strong>De Anza College</strong></li>
-									            	<ul style="list-style-type:square;">
-									            	<li>Cupertino, CA</li></ul></p>	
-									        </div>
-									    </div>
-									</div>
-
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingFour">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">MOS Specialist Certificate
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-									        <div class="panel-body">
-									            <p><li><strong>Microsoft</strong></li>
-									            	<ul style="list-style-type:square;"><li>Excel</li>
-									            	<li>Access</li></ul></p>	
-									        </div>
-									    </div>
-									</div>
-
-									
-									   
-									
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-
-			<section class="colorlib-contact" data-section="contact">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta"><strong>Get in Touch</strong></span>
-							<h2 class="colorlib-heading"><strong>Contact</strong></h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<a href="mailto:vicrllano@gmail.com" target="_blank"><i class="icon-mail"></i></a>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="mailto:vicrllano@gmail.com" target="_blank">vicrllano@gmail.com</a></p>
-								</div>
-							</div>
-
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<a href="https://www.linkedin.com/in/vicllano" target="_blank"><i class="icon-linkedin2"></i></a>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="https://www.linkedin.com/in/vicllano" target="_blank">LinkedIn</a></p>
-								</div>
-							</div>
-
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<a href="https://github.com/vllano/Porfolio_Projects.github.io" target="_blank"><i class="icon-github"></i></a>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="https://github.com/vllano/Porfolio_Projects.github.io" target="_blank">GitHub</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-7 col-md-push-1">
-							<div class="row">
-								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-									<form action="">
-										<div class="form-group">
-										</div>
-										<div class="form-group">
-										</div>
-										<div class="form-group">
-										</div>
-										<div class="form-group">
-											
-										</div>
-										<div class="form-group"></div>
-											
-									</form>
-								</div>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="colorlib-contact" data-section="footer">
-				<div class="row">
-					<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-						<div class="hire">
-							<h2>Driving business growth through intelligent, data-backed insights.</h2>
-							<a href="#" class="btn-hire">&copy; 2025 Victor Llano &nbsp;|&nbsp; All rights reserved.</a>
-						</div>
-					</div>
-				</div>
-			</section>
-
-	</div><!-- end:colorlib-main -->
-	</div><!-- end:container-wrap -->
-	</div><!-- end:colorlib-page -->
-
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-	
-	
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
-
-	</body>
+</body>
 </html>
-
