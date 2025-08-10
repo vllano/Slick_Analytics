@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Re-engineering for Field Operations | Victor Llano</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .kpi-value { letter-spacing: -0.025em; }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-700">
+
+<div class="container mx-auto max-w-6xl p-4 md:p-8">
+
+    <header class="text-center rounded-xl bg-gradient-to-r from-slate-800 to-slate-600 text-white p-12 md:p-16 mb-12 shadow-lg">
+        <h1 class="text-4xl md:text-5xl font-bold">Process Re-engineering for Field Operations</h1>
+        <p class="mt-4 text-lg text-slate-300 max-w-3xl mx-auto">Driving a 95% reduction in manual processing time through the strategic design and deployment of a custom automation tool.</p>
+    </header>
+
+    <main class="space-y-16">
+
+        <section id="summary">
+            <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-4 border-indigo-500 pb-3 inline-block">Executive Summary</h2>
+            <div class="bg-white p-8 rounded-xl shadow-md text-base md:text-lg">
+                <p><strong class="text-slate-900">The Business Problem:</strong> The Field Operations team was losing significant productivity to a manual, error-prone workflow for retrieving diagnostic logs from prototype devices. This operational bottleneck not only wasted valuable technician time (over <strong>20 minutes per device batch</strong>) but also introduced frequent data-naming errors, jeopardizing the integrity of critical engineering data.</p>
+                <p class="mt-4"><strong class="text-slate-900">The Solution & Analysis:</strong> I led a business process analysis initiative that mapped the existing workflow, identified key pain points, and defined the requirements for an automated solution. The result was a custom desktop application that automates the entire log retrieval, naming, and organization process. The tool handles multiple devices simultaneously and enforces standardized naming conventions.</p>
+                <p class="mt-4"><strong class="text-slate-900">The Impact:</strong> The deployed application eliminated the manual workflow entirely, resulting in a <strong>95% reduction in processing time</strong>. This reclaimed over <strong>1,750 hours of technician time annually</strong> (a soft-cost saving of over <strong>$87,000/year</strong>), and eradicated data entry errors. The project has become a blueprint for further automation initiatives within the department.</p>
+            </div>
+        </section>
+
+        <section id="baseline">
+            <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-4 border-indigo-500 pb-3 inline-block">Operational Baseline: The "As-Is" State</h2>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl text-red-500 mb-2">🚨</div>
+                    <p class="text-4xl font-bold text-red-600 kpi-value">~25 Mins</p>
+                    <p class="mt-1 font-semibold text-slate-800">Manual Processing Time</p>
+                    <p class="text-sm text-slate-500 mt-1">Per device batch, leading to major productivity loss.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl text-red-500 mb-2">📉</div>
+                    <p class="text-4xl font-bold text-red-600 kpi-value">~5%</p>
+                    <p class="mt-1 font-semibold text-slate-800">Estimated Error Rate</p>
+                    <p class="text-sm text-slate-500 mt-1">In file naming, causing data integrity issues.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl text-red-500 mb-2">⚠️</div>
+                    <p class="text-4xl font-bold text-red-600 kpi-value">High</p>
+                    <p class="mt-1 font-semibold text-slate-800">Operational Friction</p>
+                    <p class="text-sm text-slate-500 mt-1">Leading to technician frustration and process avoidance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution-design">
+            <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-4 border-indigo-500 pb-3 inline-block">Analysis & Solution Design</h2>
+            <div class="grid md:grid-cols-5 gap-8">
+                <div class="md:col-span-3 bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">My Role as Business Analyst</h3>
+                    <p class="mb-4">My primary objective was to diagnose the operational inefficiency and architect a viable, high-ROI solution. My analytical process was comprehensive:</p>
+                    <ul class="list-disc list-inside space-y-3">
+                        <li><strong>Process Discovery & Mapping:</strong> I conducted stakeholder interviews and observation sessions to create detailed "As-Is" workflow diagrams (using Lucidchart), which visually highlighted the precise bottlenecks and time sinks.</li>
+                        <li><strong>Requirements Engineering:</strong> I translated the operational needs into a formal Business Requirements Document (BRD). This document prioritized features like bulk processing, customizable naming conventions, and post-transfer cleanup, forming the blueprint for the solution.</li>
+                        <li><strong>Solution Justification:</strong> I performed a cost-benefit analysis comparing off-the-shelf options with a custom build, proving that a targeted, custom application would deliver a significantly higher ROI by perfectly matching the unique workflow of the team.</li>
+                        <li><strong>User Acceptance & Rollout:</strong> I designed the UAT plan, managed testing cycles with technicians to gather crucial feedback, and developed user documentation and training materials to ensure smooth adoption.</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2 bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">The Solution: "Puller" App</h3>
+                    <div class="bg-slate-200 p-2 rounded-lg">
+                        <img src="project_images/puller.png" alt="Screenshot of the Automated Log Pulling Application GUI" class="w-full h-auto rounded-md shadow-inner">
+                    </div>
+                    <p class="mt-4 text-sm">A purpose-built desktop application that provides a simple interface to automate the entire log retrieval process, reducing a multi-step manual task to a single click.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="development">
+            <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-4 border-indigo-500 pb-3 inline-block">Design and Development</h2>
+            <p class="text-lg mb-6 max-w-4xl">Based on the business requirements, the application was developed with a focus on simplicity, reliability, and ease of deployment. The design translates the required functionality into a straightforward user experience backed by a practical technology stack.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Key Features & Functionality</h3>
+                    <ul class="list-disc list-inside space-y-3">
+                        <li><strong>Simultaneous Device Handling:</strong> Leverages the Android Debug Bridge (ADB) to detect and interact with multiple connected devices at once.</li>
+                        <li><strong>Automated Log Transfer:</strong> Programmatically executes `adb pull` commands to transfer specified log files from devices to the user's computer.</li>
+                        <li><strong>Dynamic File Renaming:</strong> Applies user-defined text prefixes and standardized naming conventions to all retrieved files for perfect consistency.</li>
+                        <li><strong>Secure Post-Transfer Cleanup:</strong> Includes an optional "wipe" feature to delete logs from devices after a successful transfer, preparing them for the next cycle.</li>
+                        <li><strong>Intuitive GUI:</strong> A simple, clean interface built with Tkinter allows non-technical users to perform complex operations with just a few clicks.</li>
+                        <li><strong>Real-Time Feedback:</strong> A status log window provides clear, real-time updates on the progress of transfers, successes, and any errors.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Technology Stack</h3>
+                    <ul class="list-disc list-inside space-y-3">
+                        <li><strong>Programming Language:</strong> Python 3, chosen for its powerful standard library, cross-platform compatibility, and rapid development speed.</li>
+                        <li><strong>GUI Framework:</strong> Tkinter, Python's native GUI library, selected for creating a lightweight and dependency-free user interface.</li>
+                        <li><strong>Core Libraries:</strong>
+                            <ul class="list-[circle] list-inside ml-4 mt-1">
+                                <li>`subprocess` for executing ADB commands.</li>
+                                <li>`os` and `shutil` for file system interactions.</li>
+                                <li>`threading` to keep the UI responsive during I/O operations.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Device Interface:</strong> Android Debug Bridge (ADB), the industry-standard command-line tool for Android device communication.</li>
+                        <li><strong>Packaging & Deployment:</strong> PyInstaller, used to package the Python script and all its dependencies into a single, standalone executable for easy distribution.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact">
+            <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-4 border-indigo-500 pb-3 inline-block">Results & Business Impact</h2>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-green-500">
+                    <div class="text-4xl text-green-500 mb-2">✅</div>
+                    <p class="text-5xl font-bold text-green-600 kpi-value">95%</p>
+                    <p class="mt-1 font-semibold text-slate-800">Time Reduction</p>
+                    <p class="text-sm text-slate-500 mt-1">Task time cut from ~25 minutes to under 90 seconds.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-green-500">
+                    <div class="text-4xl text-green-500 mb-2">📈</div>
+                    <p class="text-5xl font-bold text-green-600 kpi-value">1,750+</p>
+                    <p class="mt-1 font-semibold text-slate-800">Hours Reclaimed Annually</p>
+                    <p class="text-sm text-slate-500 mt-1">Freeing up technicians for higher-value testing and analysis.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-green-500">
+                    <div class="text-4xl text-green-500 mb-2">🎯</div>
+                    <p class="text-5xl font-bold text-green-600 kpi-value">100%</p>
+                    <p class="mt-1 font-semibold text-slate-800">Data Consistency</p>
+                    <p class="text-sm text-slate-500 mt-1">Automated naming eliminated all manual entry errors.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="next-steps">
+            <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-4 border-indigo-500 pb-3 inline-block">Strategic Value & Future Enhancements</h2>
+            <div class="bg-white p-8 rounded-xl shadow-md">
+                <p class="mb-4">Beyond the immediate efficiency gains, this project delivered strategic value by demonstrating the immense ROI of targeted automation. It has catalyzed a broader conversation about process optimization within the department.</p>
+                <h4 class="text-lg font-semibold text-slate-900">Recommended Next Steps:</h4>
+                <ul class="list-disc list-inside mt-2 space-y-2">
+                    <li><strong>Direct Integration with Analytics Pipeline:</strong> Enhance the tool to automatically push retrieved logs to a central S3 bucket and trigger a downstream data processing pipeline, creating a fully "hands-off" workflow.</li>
+                    <li><strong>Develop a "Configuration-as-Code" Feature:</strong> Allow teams to save and share specific log pulling configurations for different device types and testing scenarios, further standardizing processes.</li>
+                    <li><strong>Create a Web-Based Version:</strong> Investigate migrating the tool to a web-based platform to eliminate desktop installation and provide centralized management and access control.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center mt-16 py-6 border-t border-slate-300">
+        <p class="text-slate-500">&copy; 2025 Victor Llano. All rights reserved.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
